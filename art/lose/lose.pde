@@ -4,8 +4,8 @@ rainCloud[] rainclouds;
 void setup() {
   size(600, 600);
   frameRate(30);
-  
-    // Create an array of cloud objects
+
+  // Create an array of cloud objects
   rainclouds = new rainCloud[13];
   for (int i = 0; i < rainclouds.length; i++) {
     float x = random(width);
@@ -13,14 +13,14 @@ void setup() {
     float size = random(50, 100);
     rainclouds[i] = new rainCloud(x, y, size);
   }
-  
+
   // Initialize the ArrayList to store raindrops
   raindrops = new ArrayList<Raindrop>();
 }
 
 void draw() {
-  background(50,23,77);  // Set the background to blue (sky colour)
-  
+  background(50, 23, 77);  // Set the background to blue (sky colour)
+
   if (random(1) < 0.4) {
     float x = random(width);
     raindrops.add(new Raindrop(x));
@@ -47,8 +47,8 @@ void draw() {
       raincloud.x = -raincloud.size;
     }
   }
-  
-  //draw the designs 
+
+  //draw the designs
   sadWeather();
   restartButton();
   sadWeatherCharacter();
@@ -95,10 +95,10 @@ void sadWeatherCharacter() {
   vertex(371, 296);
   vertex(346, 225);
   endShape(CLOSE);
-  
+
   //string
   line(322, 0, 324, 139);
-  
+
   fill(200, 202, 220);
   //body shadow
   beginShape();
@@ -125,7 +125,7 @@ void sadWeatherCharacter() {
   vertex(474, 494);
   vertex(372, 343);
   endShape(CLOSE);
-  
+
   fill(230, 232, 250);
   //body
   beginShape();
@@ -198,7 +198,7 @@ void sadWeatherCharacter() {
   vertex(360, 239);
   vertex(337, 242);
   endShape(CLOSE);
-  
+
   //face
   noFill();
   arc(290, 211, 10, 10, 0, PI);
@@ -209,5 +209,4 @@ void sadWeatherCharacter() {
 
 
 void sadWeather() {
-  
 }
