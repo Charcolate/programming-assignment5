@@ -5,6 +5,25 @@ class PlayScreen {
     window();
   }
 
+  void handleRaindrops(ArrayList<Raindrop> raindrops) {
+    if (random(1) < 0.4) {
+      float x = random(width);
+      raindrops.add(new Raindrop(x));
+    }
+
+    // Update and display each raindrop
+    for (int i = raindrops.size() - 1; i >= 0; i--) {
+      Raindrop raindrop = raindrops.get(i);
+      raindrop.update();
+      raindrop.display();
+
+      // Remove raindrop if it's off the bottom of the screen
+      if (raindrop.offScreen()) {
+        raindrops.remove(i);
+      }
+    }
+  }
+
   void table() {
     noStroke();
     fill (93, 57, 84);

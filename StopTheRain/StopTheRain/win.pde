@@ -5,6 +5,7 @@ class WinScreen {
     happyWeatherCharacter();
   }
 
+
   void sun() {
     strokeWeight(7);
     ellipseMode(CENTER);

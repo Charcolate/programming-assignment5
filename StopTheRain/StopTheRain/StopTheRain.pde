@@ -32,6 +32,12 @@ ArrayList<Raindrop> raindrops;
 // which screen currently
 int screen = 0;
 
+// Function to calculate and return the remaining time in seconds
+float calculateRemainingTime() {
+  int remainingTime = 20 - int((millis() - timerStart) / 1000.0);
+  return max(remainingTime, 0); // Ensure the remaining time is non-negative
+}
+
 void setup() {
   size(600, 600);
   frameRate(30);
@@ -66,13 +72,17 @@ void setup() {
     float size = random(50, 100);
     happyCloud[i] = new happyCloud(x, y, size);
   }
+
+  timerStart = millis(); // Initialize timerStart
 }
+
 
 void draw() {
   // Main Menu (Starting Screen)
   if (screen == 0) {
     background(93, 57, 84);
     StartScreen.display();
+    println("Oh no! the rain is coming in! Use the tissues to block the leaking in the window before it floods your room");
 
     // Check if 'a' is pressed, and update akey accordingly
     if (akeyPressed) {
@@ -215,8 +225,11 @@ void draw() {
       timerStart = millis();
     }
 
+    // Call the function to get the remaining time
+    float remainingTime = calculateRemainingTime();
+
     // Check if 20 seconds have passed or all tissue cases are shown
-    elapsedTime = timerStart - millis();
+    elapsedTime = constrain(millis() - timerStart, 0, 20000);
 
     // Check if 20 seconds have passed or all tissue cases are shown
     elapsedTime = millis() - timerStart;
@@ -224,6 +237,12 @@ void draw() {
       screen = 2;  // Transition to win screen
     } else if (tissueToShow == 13) {
       screen = 3;  // Transition to lose screen
+    }
+
+    // Check if it's been 20 seconds since the last timer reset
+    if (millis() - timerStart >= 20000) {
+      // Reset the timer
+      timerStart = millis();
     }
   }
 
