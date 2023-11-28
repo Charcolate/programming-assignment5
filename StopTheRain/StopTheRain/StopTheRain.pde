@@ -217,14 +217,16 @@ void draw() {
 
     // Check if 20 seconds have passed or all tissue cases are shown
     elapsedTime = timerStart - millis();
-    if (elapsedTime > 20000 && tissueToShow == 13) {
-      // Transition to screen 3
-      screen = 3;
-    } else if (elapsedTime < 20000) {
-      // Transition to screen 2
-      screen = 2;
+
+    // Check if 20 seconds have passed or all tissue cases are shown
+    elapsedTime = millis() - timerStart;
+    if (elapsedTime >= 20000) {
+      screen = 2;  // Transition to win screen
+    } else if (tissueToShow == 13) {
+      screen = 3;  // Transition to lose screen
     }
   }
+
   // lose (lose Screen)
   if (screen == 2) {
     background(50, 23, 77);
