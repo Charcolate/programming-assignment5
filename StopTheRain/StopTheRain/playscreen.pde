@@ -1,11 +1,14 @@
 class PlayScreen {
+  // Display method for the play screen
   void display() {
-    table();
-    tissueBox();
-    window();
+    table();        // Display the table
+    tissueBox();    // Display the tissue box
+    window();       // Display the window
   }
 
+  // Handle raindrops method
   void handleRaindrops(ArrayList<Raindrop> raindrops) {
+    // Generate random raindrops
     if (random(1) < 0.4) {
       float x = random(width);
       raindrops.add(new Raindrop(x));
@@ -24,6 +27,7 @@ class PlayScreen {
     }
   }
 
+  // Draw the table
   void table() {
     noStroke();
     fill (93, 57, 84);
@@ -31,6 +35,7 @@ class PlayScreen {
     rect(0, 348, 600, 600);
   }
 
+  // Draw the tissue box
   void tissueBox() {
     strokeWeight(7);
     stroke(220, 208, 255);
@@ -43,6 +48,7 @@ class PlayScreen {
     rect(175, 453, 414, 508);
   }
 
+  // Draw the window
   void window() {
     stroke(231, 159, 196);
     fill(230, 230, 250);
@@ -51,6 +57,7 @@ class PlayScreen {
     rect(295, 0, 308, 291);
   }
 
+  // Draw the left hand in the default position
   void LhandD() {
     strokeWeight(7);
     stroke(230, 232, 250);
@@ -73,6 +80,7 @@ class PlayScreen {
     endShape(CLOSE);
   }
 
+  // Draw the right hand in the default position
   void RhandD() {
     stroke(230, 232, 250);
     fill(75, 0, 130);
@@ -94,6 +102,7 @@ class PlayScreen {
     endShape(CLOSE);
   }
 
+  // Draw tissue shape 1
   void tissueB1() {
     strokeWeight(4);
     stroke(75, 0, 130);
@@ -116,6 +125,7 @@ class PlayScreen {
     endShape(CLOSE);
   }
 
+  // Draw tissue shape 2
   void tissueB2() {
     strokeWeight(4);
     stroke(75, 0, 130);
@@ -138,6 +148,7 @@ class PlayScreen {
     endShape(CLOSE);
   }
 
+  // Draw the left hand in the lifted position
   void LhandL() {
     strokeWeight(7);
     stroke(75, 0, 130);
@@ -160,6 +171,7 @@ class PlayScreen {
     endShape(CLOSE);
   }
 
+  // Draw the right hand in the lifted position
   void RhandL() {
     stroke(75, 0, 130);
     fill(230, 232, 250);
@@ -181,6 +193,7 @@ class PlayScreen {
     endShape(CLOSE);
   }
 
+  // Draw all tissues based on the tissueToShow variable
   void drawTissues() {
     for (int i = 0; i <= tissueToShow; i++) {
       switch (i) {
@@ -230,6 +243,7 @@ class PlayScreen {
     }
   }
 
+  //Each method corresponds to drawing a specific tissue shape
   void tissue1() {
     beginShape();
     vertex(-7, 265);

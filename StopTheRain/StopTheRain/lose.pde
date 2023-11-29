@@ -1,35 +1,39 @@
+// Class for the lose screen
 class LoseScreen {
+
+  // Method to display the lose screen
   void display() {
-    sadWeatherCharacter();
-    restartButton();
+    sadWeatherCharacter();  // Call the method to draw the sad weather character
+    restartButton();  // Call the method to draw the restart button
   }
   
-  //draw the restart button
+  // Method to draw the restart button
   void restartButton() {
-    strokeWeight(7);
-    stroke(220, 208, 255);
-    fill(147, 112, 219);
-    rectMode(CORNERS);
-    rect(0, 497, 98, 600);
-    stroke(231, 159, 196);
-    fill(230, 230, 250);
-    triangle(54, 595, 28, 575, 54, 555);
-    arc(50, 550, 70, 70, 0, HALF_PI);
-    arc(50, 550, 70, 70, PI, PI+QUARTER_PI);
-    arc(50, 550, 70, 70, PI+QUARTER_PI, TWO_PI);
-    line(30, 550, 20, 550);
-    stroke(231, 159, 196);
-    fill(147, 112, 219);
-    arc(50, 550, 30, 30, 0, HALF_PI);
-    arc(50, 550, 30, 30, PI, PI+QUARTER_PI);
-    arc(50, 550, 30, 30, PI+QUARTER_PI, TWO_PI);
+    strokeWeight(7);  // Set the stroke weight for the button
+    stroke(220, 208, 255);  // Set the stroke color for the button
+    fill(147, 112, 219);  // Set the fill color for the button
+    rectMode(CORNERS);  // Set the rectangle mode to CORNERS
+    rect(0, 497, 98, 600);  // Draw the main rectangle of the button
+    stroke(231, 159, 196);  // Set another stroke color for details
+    fill(230, 230, 250);  // Set another fill color for details
+    triangle(54, 595, 28, 575, 54, 555);  // Draw a triangle on the button
+    arc(50, 550, 70, 70, 0, HALF_PI);  // Draw the upper part of a circle on the button
+    arc(50, 550, 70, 70, PI, PI + QUARTER_PI);  // Draw another part of the circle on the button
+    arc(50, 550, 70, 70, PI + QUARTER_PI, TWO_PI);  // Draw the remaining part of the circle on the button
+    line(30, 550, 20, 550);  // Draw a line on the button
+    stroke(231, 159, 196);  // Set the stroke color for more details
+    fill(147, 112, 219);  // Set the fill color for more details
+    arc(50, 550, 30, 30, 0, HALF_PI);  // Draw a smaller circle on the button
+    arc(50, 550, 30, 30, PI, PI + QUARTER_PI);  // Draw another part of the smaller circle
+    arc(50, 550, 30, 30, PI + QUARTER_PI, TWO_PI);  // Draw the remaining part of the smaller circle
   }
 
-  //draw the weather character
+  // Method to draw the sad weather character
   void sadWeatherCharacter() {
-    stroke(75, 0, 130);
-    fill(147, 112, 219);
-    //side ribbon
+    stroke(75, 0, 130);  // Set the stroke color for the weather character
+    fill(147, 112, 219);  // Set the fill color for the weather character
+    
+    // Draw side ribbons of the character
     beginShape();
     vertex(291, 237);
     vertex(270, 254);
@@ -46,11 +50,11 @@ class LoseScreen {
     vertex(346, 225);
     endShape(CLOSE);
 
-    //string
+    // Draw a line representing the string of the weather character
     line(322, 0, 324, 139);
 
-    fill(200, 202, 220);
-    //body shadow
+    fill(200, 202, 220);  // Set another fill color for shadows
+    // Draw the shadow of the body
     beginShape();
     vertex(228, 470);
     vertex(234, 479);
@@ -76,8 +80,8 @@ class LoseScreen {
     vertex(372, 343);
     endShape(CLOSE);
 
-    fill(230, 232, 250);
-    //body
+    fill(230, 232, 250);  // Set the fill color for the body
+    // Draw the body of the weather character
     beginShape();
     vertex(295, 237);
     vertex(284, 249);
@@ -115,8 +119,8 @@ class LoseScreen {
     vertex(356, 240);
     endShape(CLOSE);
 
-    //neck piece
-    fill(147, 112, 219);
+    // Draw the neck piece of the weather character
+    fill(147, 112, 219);  // Set the fill color for the neck piece
     beginShape();
     vertex(291, 237);
     vertex(288, 250);
@@ -126,9 +130,8 @@ class LoseScreen {
     vertex(362, 230);
     endShape(CLOSE);
 
-
-    fill(230, 232, 250);
-    //head
+    fill(230, 232, 250);  // Set the fill color for the head
+    // Draw the head of the weather character
     beginShape();
     vertex(318, 240);
     vertex(289, 235);
@@ -149,7 +152,7 @@ class LoseScreen {
     vertex(337, 242);
     endShape(CLOSE);
 
-    //face
+    // Draw the face of the weather character
     noFill();
     arc(290, 211, 10, 10, 0, PI);
     arc(340, 211, 10, 10, 0, PI);

@@ -1,63 +1,67 @@
 class StartScreen {
 
+  // Display method that sets up and draws the start screen
   void display() {
-    table();
-    tissueBox();
-    startButton();
-    words();
+    table();         // Draw the background
+    tissueBox();     // Draw the tissue box
+    startButton();   // Draw the start button
+    words();         // Draw the "Press to Start" text
   }
 
-void keyPressed() {
-  // Check if 'a' or 's' is pressed
-  if (key == 'a' || key == 's') {
-    lhandPressed = true;
+  // Method to handle key presses
+  void keyPressed() {
+    // Check if 'a' or 's' is pressed and update corresponding flags
+    if (key == 'a' || key == 's') {
+      lhandPressed = true;
+    }
+
+    // Check if 'k' or 'l' is pressed and update corresponding flags
+    if (key == 'k' || key == 'l') {
+      rhandPressed = true;
+    }
+
+    // Check which key is pressed and update the corresponding flag
+    if (key == 'a') {
+      akeyPressed = true;
+    } else if (key == 's') {
+      skeyPressed = true;
+    } else if (key == 'k') {
+      kkeyPressed = true;
+    } else if (key == 'l') {
+      lkeyPressed = true;
+    }
   }
 
-  // Check if 'k' or 'l' is pressed
-  if (key == 'k' || key == 'l') {
-    rhandPressed = true;
+  // Method to handle key releases
+  void keyReleased() {
+    // Check if 'a' or 's' is released and update corresponding flags
+    if (key == 'a' || key == 's') {
+      lhandPressed = false;
+    }
+
+    // Check if 'k' or 'l' is released and update corresponding flags
+    if (key == 'k' || key == 'l') {
+      rhandPressed = false;
+    }
+
+    // Check which key is released and update the corresponding flag
+    if (key == 'a') {
+      akeyPressed = false;
+    } else if (key == 's') {
+      skeyPressed = false;
+    } else if (key == 'k') {
+      kkeyPressed = false;
+    } else if (key == 'l') {
+      lkeyPressed = false;
+    }
   }
 
-  // Check which key is pressed and update the corresponding flag
-  if (key == 'a') {
-    akeyPressed = true;
-  } else if (key == 's') {
-    skeyPressed = true;
-  } else if (key == 'k') {
-    kkeyPressed = true;
-  } else if (key == 'l') {
-    lkeyPressed = true;
-  }
-}
-
-void keyReleased() {
-  // Check if 'a' or 's' is released
-  if (key == 'a' || key == 's') {
-    lhandPressed = false;
-  }
-
-  // Check if 'k' or 'l' is released
-  if (key == 'k' || key == 'l') {
-    rhandPressed = false;
-  }
-
-  // Check which key is pressed and update the corresponding flag
-  if (key == 'a') {
-    akeyPressed = false;
-  } else if (key == 's') {
-    skeyPressed = false;
-  } else if (key == 'k') {
-    kkeyPressed = false;
-  } else if (key == 'l') {
-    lkeyPressed = false;
-  }
-}
-
-
+  // Draw the background
   void table() {
     background (93, 57, 84);
   }
 
+  // Draw the tissue box
   void tissueBox() {
     strokeWeight(7);
     stroke(220, 208, 255);
@@ -66,6 +70,7 @@ void keyReleased() {
     rect(28, 28, 569, 322);
   }
 
+  // Draw the start button
   void startButton() {
     stroke(231, 159, 196);
     fill(230, 230, 250);
@@ -73,6 +78,7 @@ void keyReleased() {
     rect(105, 113, 482, 234);
   }
 
+  // Draw the 'A' key in the lifted position
   void akeyL() {
     stroke(231, 159, 196);
     fill(230, 230, 250);
@@ -83,6 +89,7 @@ void keyReleased() {
     text("A", 79, 433);
   }
 
+// Draw the 'S' key in the lifted position
   void skeyL() {
     stroke(231, 159, 196);
     fill(230, 230, 250);
@@ -93,6 +100,7 @@ void keyReleased() {
     text("S", 174, 433);
   }
 
+// Draw the 'K' key in the lifted position
   void kkeyL() {
     stroke(231, 159, 196);
     fill(230, 230, 250);
@@ -103,6 +111,7 @@ void keyReleased() {
     text("K", 399, 433);
   }
 
+// Draw the 'L' key in the lifted position
   void lkeyL() {
     stroke(231, 159, 196);
     fill(230, 230, 250);
@@ -113,6 +122,7 @@ void keyReleased() {
     text("L", 494, 433);
   }
 
+// Draw the 'A' key in the default position
   void akeyD() {
     stroke(230, 230, 250);
     fill(231, 159, 196);
@@ -122,7 +132,8 @@ void keyReleased() {
     fill(230, 230, 250);
     text("A", 79, 433);
   }
-
+  
+// Draw the 'S' key in the default position
   void skeyD() {
     stroke(230, 230, 250);
     fill(231, 159, 196);
@@ -133,6 +144,7 @@ void keyReleased() {
     text("S", 174, 433);
   }
 
+// Draw the 'K' key in the default position
   void kkeyD() {
     stroke(230, 230, 250);
     fill(231, 159, 196);
@@ -143,6 +155,7 @@ void keyReleased() {
     text("K", 399, 433);
   }
 
+// Draw the 'L' key in the default position
   void lkeyD() {
     stroke(230, 230, 250);
     fill(231, 159, 196);
@@ -153,12 +166,14 @@ void keyReleased() {
     text("L", 494, 433);
   }
 
+// Draw the "Press to Start" text
   void words() {
     textSize(60);
     fill(231, 159, 196);
     text("Press to Start", 123, 192);
   }
 
+// Draw the left hand in the default position
   void LhandD() {
     strokeWeight(7);
     stroke(230, 232, 250);
@@ -181,6 +196,7 @@ void keyReleased() {
     endShape(CLOSE);
   }
 
+// Draw the Right hand in the default position
   void RhandD() {
     stroke(230, 232, 250);
     fill(75, 0, 130);
@@ -202,7 +218,7 @@ void keyReleased() {
     endShape(CLOSE);
   }
 
-
+// Draw the Left hand in the lifted position
   void LhandL() {
     strokeWeight(7);
     stroke(75, 0, 130);
@@ -225,6 +241,7 @@ void keyReleased() {
     endShape(CLOSE);
   }
 
+// Draw the Right hand in the lifted  position
   void RhandL() {
     stroke(75, 0, 130);
     fill(230, 232, 250);

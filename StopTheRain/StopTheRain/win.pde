@@ -1,54 +1,67 @@
 class WinScreen {
+  // Display method that orchestrates the drawing of the win screen
   void display() {
+    // Draw the sun
     sun();
+    // Draw the restart button
     restartButton();
+    // Draw the happy weather character
     happyWeatherCharacter();
   }
 
-
+  // Draw the sun with multiple layers for a glowing effect
   void sun() {
     strokeWeight(7);
     ellipseMode(CENTER);
+    // Outermost layer of the sun
     stroke(220, 208, 255, 100);
     fill(147, 112, 219, 100);
     ellipse(600, 0, 420, 420);
+    // Middle layers with decreasing opacity
     stroke(220, 208, 255, 150);
     fill(147, 112, 219, 150);
     ellipse(600, 0, 320, 320);
     stroke(220, 208, 255, 200);
     fill(147, 112, 219, 200);
     ellipse(600, 0, 220, 220);
+    // Innermost layer with full opacity
     stroke(220, 208, 255);
     fill(147, 112, 219);
     ellipse(600, 0, 120, 120);
   }
 
-  //draw the restart button
+  // Draw the restart button with intricate details
   void restartButton() {
+    // Outer rectangle of the button
     stroke(220, 208, 255);
     fill(147, 112, 219);
     rectMode(CORNERS);
     rect(0, 497, 98, 600);
+    // Triangular portion of the button
     stroke(231, 159, 196);
     fill(230, 230, 250);
     triangle(54, 595, 28, 575, 54, 555);
+    // Circular segments around the button
     arc(50, 550, 70, 70, 0, HALF_PI);
-    arc(50, 550, 70, 70, PI, PI+QUARTER_PI);
-    arc(50, 550, 70, 70, PI+QUARTER_PI, TWO_PI);
+    arc(50, 550, 70, 70, PI, PI + QUARTER_PI);
+    arc(50, 550, 70, 70, PI + QUARTER_PI, TWO_PI);
+    // Line inside the button
     line(30, 550, 20, 550);
+    // Inner circular segments
     stroke(231, 159, 196);
     fill(147, 112, 219);
     arc(50, 550, 30, 30, 0, HALF_PI);
-    arc(50, 550, 30, 30, PI, PI+QUARTER_PI);
-    arc(50, 550, 30, 30, PI+QUARTER_PI, TWO_PI);
+    arc(50, 550, 30, 30, PI, PI + QUARTER_PI);
+    arc(50, 550, 30, 30, PI + QUARTER_PI, TWO_PI);
   }
 
-  //draw the character hapy
+  // Draw the happy weather character with various shapes and details
   void happyWeatherCharacter() {
+    // Drawing the string above the character
     stroke(75, 0, 130);
     fill(147, 112, 219);
-    //string
     line(322, 0, 324, 139);
+
 
     //ribbons
     beginShape();

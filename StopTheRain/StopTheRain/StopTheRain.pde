@@ -1,41 +1,56 @@
+////////////// Charlotte Fung, 991723679///////////////////////
+
+/////game description/////
+//players press start
+//press a or s to control left hand and k or l to control right hand
+//press as fast as possible to successfully stuck 1 line of tissue paper ball at the rim of the window to stop the water from leaking
+//if success, go to the win screen
+//if fail in 20 seconds, go to the lose screen
+//press restart button to try again
+
+/////pseudocode /////
+//
+
+
+
 // All classes
-StartScreen StartScreen;
-rainCloud[] rainclouds;
-PlayScreen PlayScreen;
-LoseScreen LoseScreen;
-happyCloud[] happyCloud;
-WinScreen WinScreen;
+StartScreen StartScreen;  // Declare an instance of StartScreen class
+rainCloud[] rainclouds;  // Declare an array of rainCloud objects
+PlayScreen PlayScreen;  // Declare an instance of PlayScreen class
+LoseScreen LoseScreen;  // Declare an instance of LoseScreen class
+happyCloud[] happyCloud;  // Declare an array of happyCloud objects
+WinScreen WinScreen;  // Declare an instance of WinScreen class
 
 // Main Menu + playing (Starting Screen + play Screen)
-boolean akeyPressed = false;
-boolean skeyPressed = false;
-boolean kkeyPressed = false;
-boolean lkeyPressed = false;
-boolean lhandPressed = false;
-boolean rhandPressed = false;
+boolean akeyPressed = false;  // Flag to track if 'a' key is pressed
+boolean skeyPressed = false;  // Flag to track if 's' key is pressed
+boolean kkeyPressed = false;  // Flag to track if 'k' key is pressed
+boolean lkeyPressed = false;  // Flag to track if 'l' key is pressed
+boolean lhandPressed = false;  // Flag to track if 'a' or 's' key is pressed
+boolean rhandPressed = false;  // Flag to track if 'k' or 'l' key is pressed
 
 // playing (play Screen)
-boolean showTissueB1 = true;
-color Sdry, Fdry, Swet, Fwet;
-boolean aPressed, sPressed, kPressed, lPressed;
-int lastKeyPressTime;
-int tissueToShow = 0;
-int buttonPressCount = 0;
-int tissueDisappearTime = 0;
-boolean tissueVisible = false;
-int timerStart;
-int elapsedTime;
+boolean showTissueB1 = true;  // Flag to control which tissue to display
+color Sdry, Fdry, Swet, Fwet;  // Declare color variables
+boolean aPressed, sPressed, kPressed, lPressed;  // Flags to track key presses
+int lastKeyPressTime;  // Store the time of the last key press
+int tissueToShow = 0;  // Index to track which tissue to show
+int buttonPressCount = 0;  // Count consecutive button presses
+int tissueDisappearTime = 0;  // Store the time tissue disappeared
+boolean tissueVisible = false;  // Flag to track if tissue is visible
+int timerStart;  // Store the starting time
+int elapsedTime;  // Store the elapsed time
 
 // Main Menu + playing + lose (Starting Screen + play Screen + lose Screen)
-ArrayList<Raindrop> raindrops;
+ArrayList<Raindrop> raindrops;  // Declare an ArrayList to store Raindrop objects
 
 // which screen currently
-int screen = 0;
+int screen = 0;  // Variable to track the current screen
 
 // Function to calculate and return the remaining time in seconds
 float calculateRemainingTime() {
   int remainingTime = 20 - int((millis() - timerStart) / 1000.0);
-  return max(remainingTime, 0); // Ensure the remaining time is non-negative
+  return max(remainingTime, 0);  // Ensure the remaining time is non-negative
 }
 
 void setup() {
@@ -75,7 +90,6 @@ void setup() {
 
   timerStart = millis(); // Initialize timerStart
 }
-
 
 void draw() {
   // Main Menu (Starting Screen)
