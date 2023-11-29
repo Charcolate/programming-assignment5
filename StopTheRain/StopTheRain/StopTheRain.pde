@@ -8,8 +8,43 @@
 //if fail in 20 seconds, go to the lose screen
 //press restart button to try again
 
-/////pseudocode /////
-//
+//////////pseudocode//////////
+  //canvas 600x600 with frameRate of 30
+  //make arraylist of raindrops which have it from top of the screen to the bottom of the screen
+  //array for clouds, one for rain one for not raining
+  //get the start and restart button
+  //have press to start in start button and restart icon in restart button
+  //boolean to check if a, s, k, l, are pressed individually and in pairs (a+s, k+l)
+  //connect a+s to left hand and k+l to right hand, so if a or s are pressed, left hand swap colour of stroke and fill until it was released 
+//////////starting screen//////////
+  //connect a, s, k, l to their own key caps so when they are pressed, the stroke and fill swap until it was released
+  //get the start button
+  //have "press to start" in start button
+  //when the start screen is on, do a "Oh no! the rain is coming in! Use the tissues to block the leaking in the window before it floods your room" as printIn
+  //do a table colour for background
+//////////playing screen//////////
+  //establish the colour for dry and wet crumbled paper, dry ligher then wet in both stroke and fill
+  //make over 12 cases (change according to the appropriate time of key presses) of those crumbled paper (default is dry colour) in a line at the bottom rim of the window
+  //the first threee crumbled paper appears at the same time and the rest appears one by one
+  //make a check for when is the last time a, s, k, l are pressed so if none of those are pressed in 2 seconds, it changes all the crumbled paper from dry colour to wet colour
+  //the hands stays the same key pressed and key released function and also the same pocition
+  //make 2 versions of paper connecting to the tissue box and switch them when the a, s, k, l are pressed to indicate there are things happening instead of nothing
+  //hand the raindrop and rain colour in this at the back 
+  //background of raining sky colour (darker blue)
+  //if players can get to the right end of the canvas before 20 seconds, they go to the winning screen
+  //if players cannot get to the right end of the canvas before 20 seconds, they go to the losing screen
+//////////winning screen//////////
+  //a restart button
+  //when pressed, gets the player back to the starting screen to start over
+  //make a happy face on that one doll where japanese people make to get good weather and no raining
+  //make a sun
+  //this is the part to show the good weather clouds
+//////////losing screen//////////
+  //a restart button
+  //when pressed, gets the player back to the starting screen to start over
+  //make a sad face on that one doll where japanese people make to get good weather and no raining
+  //this is the part to continue showing the raindrops and the rain clouds
+//////////Start Over//////////
 
 
 
